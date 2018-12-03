@@ -7,11 +7,11 @@ public class EnemyDispenserController : MonoBehaviour
     public static EnemyDispenserController Instance;
 
     [SerializeField] private EnemyDispenser topLeftDispenser;
-	[SerializeField] private EnemyDispenser topLeft2Dispenser;
-	[SerializeField] private EnemyDispenser topRightDispenser;
-	[SerializeField] private EnemyDispenser topRight2Dispenser;
-	[SerializeField] private EnemyDispenser bottomLeftDispenser;
+    [SerializeField] private EnemyDispenser topRightDispenser;
+    [SerializeField] private EnemyDispenser bottomLeftDispenser;
+    [SerializeField] private EnemyDispenser bottomLeft2Dispenser;
     [SerializeField] private EnemyDispenser bottomRightDispenser;
+    [SerializeField] private EnemyDispenser bottomRight2Dispenser;
 
     public float speed;
 
@@ -22,9 +22,9 @@ public class EnemyDispenserController : MonoBehaviour
         Instance = this;
 
 		topLeftDispenser.Init(this);
-		topLeft2Dispenser.Init(this);
+		bottomLeft2Dispenser.Init(this);
 		topRightDispenser.Init(this);
-		topRight2Dispenser.Init(this);
+		bottomRight2Dispenser.Init(this);
         bottomLeftDispenser.Init(this);
         bottomRightDispenser.Init(this);
     }
@@ -78,26 +78,26 @@ public class EnemyDispenserController : MonoBehaviour
 
 	public void FireTwoLeft()
 	{
-		activeEnemies.Add(topLeft2Dispenser.FireEnemy());
-		activeEnemies.Add(bottomLeftDispenser.FireEnemy());
+        activeEnemies.Add(topLeftDispenser.FireEnemy());
+        activeEnemies.Add(bottomLeft2Dispenser.FireEnemy());
 	}
 
 	public void FireTwoRight()
 	{
-		activeEnemies.Add(topRight2Dispenser.FireEnemy());
-		activeEnemies.Add(bottomLeftDispenser.FireEnemy());
+        activeEnemies.Add(topRightDispenser.FireEnemy());
+        activeEnemies.Add(bottomRight2Dispenser.FireEnemy());
 	}
 
 	public void FireMix1()
 	{
-		activeEnemies.Add(topLeft2Dispenser.FireEnemy());
-		activeEnemies.Add(bottomRightDispenser.FireEnemy());
+		activeEnemies.Add(bottomLeft2Dispenser.FireEnemy());
+		activeEnemies.Add(topRightDispenser.FireEnemy());
 	}
 
 	public void FireMix2()
 	{
-		activeEnemies.Add(topRight2Dispenser.FireEnemy());
-		activeEnemies.Add(bottomLeftDispenser.FireEnemy());
+		activeEnemies.Add(bottomRight2Dispenser.FireEnemy());
+		activeEnemies.Add(topLeftDispenser.FireEnemy());
 	}
 
     public void HandleEnemyDestroyed(Enemy destroyedEnemy)
