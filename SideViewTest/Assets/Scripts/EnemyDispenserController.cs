@@ -44,7 +44,7 @@ public class EnemyDispenserController : MonoBehaviour
 
     void FireRandomSequence()
     {
-		var randomInt = Random.Range (0, 4);
+		var randomInt = Random.Range (0, 5);
 
 		if (randomInt == 0)
 		{
@@ -102,8 +102,14 @@ public class EnemyDispenserController : MonoBehaviour
 
     public void HandleEnemyDestroyed(Enemy destroyedEnemy)
     {
+        StartCoroutine(HandleEnemyDestoyedCo(destroyedEnemy));
+    }
+
+    private IEnumerator HandleEnemyDestoyedCo(Enemy destroyedEnemy)
+    {
+        yield return new WaitForSeconds(1);
         activeEnemies.Remove(destroyedEnemy);
-        Destroy(destroyedEnemy.gameObject, 1); 
+        Destroy(destroyedEnemy.gameObject);
         DetermineIfShouldFire();
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour 
 {
+    private bool _isHit = false;
+
     public void Init(Vector2 direction, float speed)
     {
         GetComponent<Rigidbody2D>().AddForce(direction * speed, ForceMode2D.Impulse);
@@ -11,13 +13,10 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        EnemyDispenserController.Instance.HandleEnemyDestroyed(this);
+        if(!_isHit)
+        {
+            EnemyDispenserController.Instance.HandleEnemyDestroyed(this);
+            _isHit = true;
+        }
     }
-
-	private void OnDestroy(){
-		if (EnemyDispenserController.Instance != null) 
-		{
-			EnemyDispenserController.Instance.HandleEnemyDestroyed(this);
-		}
-	}
 }
