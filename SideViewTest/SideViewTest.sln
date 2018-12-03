@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SideViewTest", "SideViewTest.csproj", "{328E5F8B-0709-6E81-943F-A9AB5EEE6480}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SideViewTest", "Assembly-CSharp.csproj", "{247259FC-2AAC-860B-5189-CBCB73EDAE13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{328E5F8B-0709-6E81-943F-A9AB5EEE6480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{328E5F8B-0709-6E81-943F-A9AB5EEE6480}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{328E5F8B-0709-6E81-943F-A9AB5EEE6480}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{328E5F8B-0709-6E81-943F-A9AB5EEE6480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247259FC-2AAC-860B-5189-CBCB73EDAE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247259FC-2AAC-860B-5189-CBCB73EDAE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247259FC-2AAC-860B-5189-CBCB73EDAE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247259FC-2AAC-860B-5189-CBCB73EDAE13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
